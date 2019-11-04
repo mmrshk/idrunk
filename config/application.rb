@@ -11,12 +11,12 @@ require 'action_mailer/railtie'
 
 Bundler.require(*Rails.groups)
 
-module BoilerplateRailsApi
+module IdrunkRailsApi
   class Application < Rails::Application
     config.load_defaults 6.0
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.autoload_paths << Rails.root.join('config/routes')
-    config.autoload_paths << Rails.root.join('app')
+    config.autoload_paths << Rails.root.join('app/channels')
     config.autoload_paths << Rails.root.join('lib')
     config.api_only = true
     config.active_job.queue_adapter = :sidekiq

@@ -9,4 +9,4 @@ default: &default
 
 test:
   <<: *default
-  database: boilerplate_rails_api_test
+  database: idrunk_test

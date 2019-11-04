@@ -4,7 +4,7 @@ detectors:
 
   UncommunicativeModuleName:
     accept:
-      - BoilerplateRailsApi
+      - IdrunkRailsApi
       - V1
 
   NestedIterators:

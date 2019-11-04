@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: ~/boilerplate-rails-api
+  working_directory: ~/idrunk
   docker:
     - image: circleci/ruby:2.6.3-node
       environment:
@@ -21,7 +21,7 @@ references:
   restore_bundle_cache: &restore_bundle_cache
     restore_cache:
       keys:
-        - boilerplate-rails-api-{{ checksum "Gemfile.lock" }}
+        - idrunk-{{ checksum "Gemfile.lock" }}
 
   bundle_install: &bundle_install
     run:
@@ -30,7 +30,7 @@ references:
 
   save_bundle_cache: &save_bundle_cache
     save_cache:
-      key: boilerplate-rails-api-{{ checksum "Gemfile.lock" }}
+      key: idrunk-{{ checksum "Gemfile.lock" }}
       paths:
         - vendor/bundle
 
@@ -103,7 +103,7 @@ jobs:
           command: bundle exec undercover -c origin/develop
 
       - store_artifacts:
-          path: ~/boilerplate-rails-api/coverage
+          path: ~/idrunk/coverage
           destination: coverage
 
 workflows:

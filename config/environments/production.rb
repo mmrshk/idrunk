@@ -53,7 +53,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "boilerplate_rails_api_production"
+  # config.active_job.queue_name_prefix = "idrunk_production"
 
   config.action_mailer.perform_caching = false
   config.default_sender_email = 'no-reply@localhost'
