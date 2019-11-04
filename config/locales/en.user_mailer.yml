@@ -1,0 +1,20 @@
+en:
+  user_mailer:
+    confirmation:
+      subject: Email confirmation
+      title: Email verification
+      confirm: Confirm
+      message: my email
+      email: Email
+      confirmation_url: Confirmation url
+    verification_successful:
+      subject: Your account has been verified successfully
+      title: Your account has been verified successfully
+    reset_password:
+      subject: Reset password
+      title: Reset user account password
+      reset: Reset
+      message: current user account password for
+    reset_password_successful:
+      subject: Your user account password has been changed
+      title: Your user account password has been changed
