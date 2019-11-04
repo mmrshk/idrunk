@@ -16,8 +16,8 @@ module BoilerplateRailsApi
     config.load_defaults 6.0
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
     config.autoload_paths << Rails.root.join('config/routes')
-    config.autoload_paths << Rails.root.join('app/channels')
-    config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app')
+    config.autoload_paths << Rails.root.join('lib')
     config.api_only = true
     config.active_job.queue_adapter = :sidekiq
     config.test_framework = :rspec
