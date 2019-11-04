@@ -32,6 +32,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'jwt_sessions', '~> 2.4', '>= 2.4.3'
 
+# Template generator
+gem 'slim'
+gem 'slim-rails'
+
+# Internationalization
+gem 'i18n'
+
 group :development, :test do
   gem 'bullet', '~> 6.0', '>= 6.0.2'
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'

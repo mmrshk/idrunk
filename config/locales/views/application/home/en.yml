@@ -1,0 +1,6 @@
+en:
+  views:
+    application:
+      home:
+        header: 'Example'
+        michael: 'Luv u'
