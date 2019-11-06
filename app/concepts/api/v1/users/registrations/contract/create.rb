@@ -3,8 +3,10 @@
 module Api::V1::Users::Registrations::Contract
   class Create < ApplicationContract
     property :email
+    property :account_type
     property :password
     property :password_confirmation, virtual: true
+    property :phone_number
 
     validation :default do
       configure { config.namespace = :user_password }
@@ -16,6 +18,8 @@ module Api::V1::Users::Registrations::Contract
         format?: Constants::Shared::EMAIL_REGEX
       )
       required(:password).filled(:str?)
+      required(:email).filled(:str?)
+      required(:account_type).filled(:str?) # re-do
       required(:password_confirmation).filled(:str?)
 
       required(:password).filled(
