@@ -5,9 +5,9 @@
 #
 #  id         :integer          not null, primary key
 #  account_id :integer
-#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  name       :string           default(""), not null
 #
 # Indexes
 #
@@ -18,4 +18,10 @@
 
 class User < ApplicationRecord
   belongs_to :account
+  has_many :item_dates, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+
+  has_one :institution, dependent: :destroy
+  has_one :subscription, dependent: :destroy
+  has_one :favorite, dependent: :destroy
 end
