@@ -82,6 +82,10 @@ Lint/UnreachableCode:
 
 # Layout ----------------------------------------------------------------------
 
+Layout/AlignHash:
+  Exclude:
+    - 'lib/tasks/auto_annotate_models.rake'
+
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 

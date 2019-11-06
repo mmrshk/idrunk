@@ -40,6 +40,7 @@ gem 'slim-rails'
 gem 'i18n'
 
 group :development, :test do
+  gem 'annotate'
   gem 'bullet', '~> 6.0', '>= 6.0.2'
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
   gem 'ffaker', '~> 2.12'

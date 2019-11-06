@@ -17,9 +17,7 @@ module Api::V1::Users::Registrations::Operation
 
     def send_confirmation_link(_ctx, model:, email_token:, **)
       Api::V1::Users::Registrations::Worker::EmailConfirmation.perform_async(
-        email: model.email,
-        token: email_token,
-        user_verification_path: Rails.application.config.user_verification_path
+        model.email, email_token, Rails.application.config.user_verification_path
       )
     end
   end
