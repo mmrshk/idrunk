@@ -15,6 +15,7 @@ gem 'dry-validation', '0.11.1'
 gem 'trailblazer', '~> 2.1'
 gem 'trailblazer-endpoint', github: 'trailblazer/trailblazer-endpoint'
 
+gem 'geokit-rails'
 # Decorator
 gem 'draper', '~> 3.1'
 

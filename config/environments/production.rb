@@ -60,6 +60,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'idrunk.herokuapp.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.user_verification_path = 'https://idrunk.herokuapp.com/api/v1/users/verification'
   config.user_reset_password_path = 'https://idrunk.herokuapp.com/api/v1/users/reset_password'
@@ -68,8 +69,7 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     enable_starttls_auto: true,
     port: 587,
-    # domain: Rails.application.credentials.MAIL_HOST,
-    domain: 'gmail.com',
+    domain: 'smtp.gmail.com',
     authentication: :plain,
     user_name: Rails.application.credentials.GMAIL_USERNAME,
     password: Rails.application.credentials.GMAIL_PASSWORD

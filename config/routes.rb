@@ -20,6 +20,10 @@ Rails.application.routes.draw do
           resource :profile, only: :show
         end
       end
+
+      namespace :home do
+        resources :institution, only: %i[index show]
+      end
     end
   end
 end

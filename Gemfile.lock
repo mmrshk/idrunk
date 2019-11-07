@@ -171,6 +171,10 @@ GEM
       ruby_parser (>= 3.13.0)
     ffaker (2.12.0)
     ffi (1.11.1)
+    geokit (1.13.1)
+    geokit-rails (2.3.1)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.6.0)
@@ -430,6 +434,7 @@ DEPENDENCIES
   fast_jsonapi (~> 1.5)
   fasterer (~> 0.7.1)
   ffaker (~> 2.12)
+  geokit-rails
   i18n
   json_matchers (~> 0.11.1)
   jwt_sessions (~> 2.4, >= 2.4.3)

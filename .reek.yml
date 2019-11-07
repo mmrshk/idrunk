@@ -34,6 +34,7 @@ detectors:
   TooManyConstants:
     exclude:
       - JsonApi::Filtering::Predicates
+      - Constants::Shared
 
   NilCheck:
     exclude:
