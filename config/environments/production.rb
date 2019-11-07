@@ -61,8 +61,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'idrunk.herokuapp.com', protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
-  config.user_verification_path = 'http://idrunk.herokuapp.com/api/v1/users/verification'
-  config.user_reset_password_path = 'http://idrunk.herokuapp.com/api/v1/users/reset_password'
+  config.user_verification_path = 'https://idrunk.herokuapp.com/api/v1/users/verification'
+  config.user_reset_password_path = 'https://idrunk.herokuapp.com/api/v1/users/reset_password'
 
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.gmail.com',
