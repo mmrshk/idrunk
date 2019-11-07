@@ -58,6 +58,23 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.default_sender_email = 'no-reply@localhost'
 
+  config.action_mailer.default_url_options = { host: 'idrunk.herokuapp.com', protocol: 'https' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.user_verification_path = 'http://idrunk.herokuapp.com/api/v1/users/verification'
+  config.user_reset_password_path = 'http://idrunk.herokuapp.com/api/v1/users/reset_password'
+
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.gmail.com',
+    enable_starttls_auto: true,
+    port: 587,
+    # domain: Rails.application.credentials.MAIL_HOST,
+    domain: 'gmail.com',
+    authentication: :plain,
+    user_name: Rails.application.credentials.GMAIL_USERNAME,
+    password: Rails.application.credentials.GMAIL_PASSWORD
+  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
