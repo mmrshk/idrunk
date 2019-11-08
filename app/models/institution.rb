@@ -6,7 +6,7 @@
 #
 #  id               :integer          not null, primary key
 #  account_id       :integer
-#  institution_type :string
+#  institution_type :integer
 #  name             :string           not null
 #  latitude         :float
 #  longitude        :float
@@ -32,4 +32,6 @@ class Institution < ApplicationRecord
   has_many :featured_lists, dependent: :destroy
   has_many :favorites, through: :featured_lists, dependent: :destroy
   has_many :items, through: :categories, dependent: :destroy
+
+  enum institution_type: { restaurant: 0, cafe: 1,  bar: 2, coffe_bar: 3 }
 end

@@ -7,8 +7,8 @@ module Constants
     PASSWORD_MIN_SIZE = 8
     EMAIL_MAX_LENGTH = 255
     HMAC_SECRET = Rails.env.test? ? 'test' : Rails.application.credentials.secret_key_base
-    DNIPRO_LATITUDE = 48.45
-    DNIPRO_LONGITUDE = 34.98
+    DNIPRO_LATITUDE = 48.466496
+    DNIPRO_LONGITUDE = 35.050786
     DEFAULT_DISTANCE = 5
   end
 end

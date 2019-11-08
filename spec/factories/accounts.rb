@@ -6,11 +6,12 @@
 #  id              :integer          not null, primary key
 #  email           :string           default(""), not null
 #  password_digest :string
-#  account_type    :string
+#  account_type    :integer
 #  verified        :boolean          default("false"), not null
 #  phone_number    :string           default(""), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  owner_mode      :boolean          default("false")
 #
 # Indexes
 #

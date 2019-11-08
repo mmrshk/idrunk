@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_185604) do
+ActiveRecord::Schema.define(version: 2019_11_08_044539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 2019_11_06_185604) do
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "password_digest"
-    t.string "account_type"
+    t.integer "account_type"
     t.boolean "verified", default: false, null: false
     t.string "phone_number", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "owner_mode", default: false
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["phone_number"], name: "index_accounts_on_phone_number", unique: true
   end
@@ -55,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_185604) do
 
   create_table "institutions", force: :cascade do |t|
     t.bigint "account_id"
-    t.string "institution_type"
+    t.integer "institution_type"
     t.string "name", null: false
     t.float "latitude"
     t.float "longitude"
