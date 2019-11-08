@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'ffaker'
 
 account = Account.create(account_type: 1,
                email: FFaker::Internet.email,
