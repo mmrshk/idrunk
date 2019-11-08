@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+require 'ffaker'
 
 account = Account.create(account_type: 1,
-               email: 'emma.yeroshek@gmail.com',
+               email: FFaker::Internet.email,
                verified: true,
                phone_number: FFaker::PhoneNumber.phone_number,
                password: 'password', owner_mode: true)
