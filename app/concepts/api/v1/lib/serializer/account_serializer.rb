@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 module Api::V1::Lib::Serializer
-  class Account < ApplicationSerializer
+  class AccountSerializer < ApplicationSerializer
     set_type :account
     attributes :email, :created_at
+
+    belongs_to :user, serializer: Api::V1::Lib::Serializer::UserSerializer
   end
 end
