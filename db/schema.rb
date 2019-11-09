@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_044539) do
+ActiveRecord::Schema.define(version: 2019_11_09_091726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 2019_11_08_044539) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "featured_list", force: :cascade do |t|
+  create_table "featured_lists", force: :cascade do |t|
     t.bigint "institution_id"
     t.bigint "favorite_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorite_id"], name: "index_featured_list_on_favorite_id"
-    t.index ["institution_id"], name: "index_featured_list_on_institution_id"
+    t.index ["favorite_id"], name: "index_featured_lists_on_favorite_id"
+    t.index ["institution_id"], name: "index_featured_lists_on_institution_id"
   end
 
   create_table "institutions", force: :cascade do |t|
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_044539) do
     t.bigint "user_id"
     t.bigint "item_id"
     t.boolean "available", default: true
-    t.datetime "start_at", null: false
-    t.datetime "end_at", null: false
+    t.datetime "start_at", default: "2019-11-09 00:00:00", null: false
+    t.datetime "end_at", default: "2019-11-09 23:59:59", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_item_dates_on_item_id"
@@ -119,8 +119,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_044539) do
 
   add_foreign_key "categories", "institutions"
   add_foreign_key "favorites", "users"
-  add_foreign_key "featured_list", "favorites"
-  add_foreign_key "featured_list", "institutions"
+  add_foreign_key "featured_lists", "favorites"
+  add_foreign_key "featured_lists", "institutions"
   add_foreign_key "institutions", "accounts"
   add_foreign_key "item_dates", "items"
   add_foreign_key "item_dates", "users"

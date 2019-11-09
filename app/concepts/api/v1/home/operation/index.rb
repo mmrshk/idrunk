@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module Api::V1::Home::Index::Operation
+module Api::V1::Home::Operation
   class Index < ApplicationOperation
     pass :set_location
     step :show_institutions
-    step Macro::Renderer(serializer: Api::V1::Home::Index::Serializer::Institutions)
+    step Macro::Renderer(serializer: Api::V1::Home::Serializer::Institution)
 
     def set_location(ctx, **)
       ctx[:latitude] = ctx[:params][:latitude] || Constants::Shared::DNIPRO_LATITUDE
