@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 account = Account.create(account_type: 1,
-               email: FFaker::Internet.email,
+               email: 'yeroshek@gmail.com',
                verified: true,
                phone_number: FFaker::PhoneNumber.phone_number,
                password: 'password', owner_mode: true)
@@ -21,7 +21,7 @@ Institution.institution_types.each do |institution_type, _|
                      address: FFaker::Address.street_address)
 
   favorite = Favorite.create(user_id: user.id)
-  featured_lists = FeaturedList.create(institution_id: institution, favorite_id: favorite.id)
+  featured_lists = FeaturedListItem.create(institution_id: institution.id, favorite_id: favorite.id)
   category = Category.create(title: '1+1', institution_id: institution.id)
 
   cost = 20.0

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
-# Table name: featured_lists
+# Table name: featured_list_items
 #
 #  id             :integer          not null, primary key
 #  institution_id :integer
@@ -12,13 +11,13 @@
 #
 # Indexes
 #
-#  index_featured_lists_on_favorite_id     (favorite_id)
-#  index_featured_lists_on_institution_id  (institution_id)
+#  index_featured_list_items_on_favorite_id     (favorite_id)
+#  index_featured_list_items_on_institution_id  (institution_id)
 #
 
 # frozen_string_literal: true
 
-class FeaturedList < ApplicationRecord
+class FeaturedListItem < ApplicationRecord
   belongs_to :favorite, dependent: :destroy
   belongs_to :institution, dependent: :destroy
 end

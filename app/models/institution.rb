@@ -29,8 +29,8 @@ class Institution < ApplicationRecord
 
   has_many :categories, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :featured_lists, dependent: :destroy
-  has_many :favorites, through: :featured_lists, dependent: :destroy
+  has_many :featured_list_items, dependent: :destroy
+  has_many :favorites, through: :featured_list_items, dependent: :destroy
   has_many :items, through: :categories, dependent: :destroy
 
   enum institution_type: { restaurant: 0, cafe: 1,  bar: 2, coffe_bar: 3 }

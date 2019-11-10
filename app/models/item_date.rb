@@ -8,8 +8,8 @@
 #  user_id    :integer
 #  item_id    :integer
 #  available  :boolean          default("true")
-#  start_at   :datetime         default("2019-11-09 00:00:00"), not null
-#  end_at     :datetime         default("2019-11-09 23:59:59.999999"), not null
+#  start_at   :datetime         default("2019-11-10 00:00:00"), not null
+#  end_at     :datetime         default("2019-11-10 23:59:59.999999"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

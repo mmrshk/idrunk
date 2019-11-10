@@ -16,6 +16,6 @@
 
 class Favorite < ApplicationRecord
   belongs_to :user, dependent: :destroy
-  has_many :featured_lists, dependent: :destroy
-  has_many :institutions, through: :featured_lists, dependent: :destroy
+  has_many :featured_list_items, dependent: :destroy
+  has_many :institutions, through: :featured_list_items, dependent: :destroy
 end

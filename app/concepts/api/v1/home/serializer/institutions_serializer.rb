@@ -2,8 +2,14 @@
 
 module Api::V1::Home::Serializer
   class InstitutionsSerializer < ApplicationSerializer
+    include FavoriteHelper
+
     set_type :institution
+
     attributes :institution_type, :name, :longitude, :latitude, :address
-    belongs_to :account, serializer: Api::V1::Lib::Serializer::AccountSerializer
+
+    attribute :is_favorite do |object|
+      favorite?(object)
+    end
   end
 end
