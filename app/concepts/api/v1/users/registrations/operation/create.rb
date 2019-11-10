@@ -9,7 +9,7 @@ module Api::V1::Users::Registrations::Operation
     step Macro::Semantic(success: :created)
     step :set_email_token
     step :send_confirmation_link
-    step Macro::Renderer(serializer: Api::V1::Lib::Serializer::Account)
+    step Macro::Renderer(serializer: Api::V1::Lib::Serializer::AccountSerializer)
 
     def set_email_token(ctx, model:, **)
       ctx[:email_token] = Api::V1::Users::Lib::Service::EmailToken.create(account_id: model.id)

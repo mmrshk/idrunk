@@ -16,7 +16,7 @@ RSpec.describe Api::V1::Users::Registrations::Operation::Create do
       expect(result[:semantic_success]).to eq(:created)
       expect(result[:email_token]).not_to be_nil
       expect(result[:model]).to be_persisted
-      expect(result[:renderer]).to include(serializer: Api::V1::Lib::Serializer::Account)
+      expect(result[:renderer]).to include(serializer: Api::V1::Lib::Serializer::AccountSerializer)
       expect(result).to be_success
     end
   end
