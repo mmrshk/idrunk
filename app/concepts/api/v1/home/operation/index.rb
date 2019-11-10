@@ -4,7 +4,7 @@ module Api::V1::Home::Operation
   class Index < ApplicationOperation
     pass :set_location
     step :show_institutions
-    step Macro::Renderer(serializer: Api::V1::Home::Serializer::InstitutionsSerializer)
+    step Macro::Renderer(serializer: Api::V1::Home::Serializer::InstitutionsSerializer, meta: :current_account)
 
     def set_location(ctx, **)
       ctx[:latitude] = ctx[:params][:latitude] || Constants::Shared::DNIPRO_LATITUDE

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Api::V1::Home
-  class InstitutionController < ApiController
+  class InstitutionController < AuthorizedApiController
     def index
       endpoint Api::V1::Home::Operation::Index
     end

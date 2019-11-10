@@ -5,8 +5,11 @@ module Api::V1::Home::Serializer
     set_type :institution
     attributes :institution_type, :name, :longitude, :latitude, :address
 
-    belongs_to :account, serializer: Api::V1::Lib::Serializer::AccountSerializer
     has_many :categories, serializer: Api::V1::Lib::Serializer::CategorySerializer
-    has_many :reviews, serializer: Api::V1::Lib::Serializer::ReviewSerializer
+
+    attribute :review_rating do |object|
+      @reviews ||= Review.where(institution_id: object.id)
+      @reviews.sum(:rating) / @reviews.count
+    end
   end
 end
