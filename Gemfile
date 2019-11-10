@@ -40,11 +40,13 @@ gem 'slim-rails'
 # Internationalization
 gem 'i18n'
 
+# ffaker
+gem 'ffaker', '~> 2.12'
+
 group :development, :test do
   gem 'annotate'
   gem 'bullet', '~> 6.0', '>= 6.0.2'
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
-  gem 'ffaker', '~> 2.12'
   gem 'pry-byebug', '~> 3.7'
   gem 'pry-rails', '~> 0.3.9'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
