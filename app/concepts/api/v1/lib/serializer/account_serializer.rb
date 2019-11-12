@@ -6,5 +6,9 @@ module Api::V1::Lib::Serializer
     attributes :email, :created_at
 
     belongs_to :user, serializer: Api::V1::Lib::Serializer::UserSerializer
+
+    meta do |object, params|
+      params[:options][:meta]
+    end
   end
 end
