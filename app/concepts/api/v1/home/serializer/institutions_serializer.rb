@@ -7,9 +7,7 @@ module Api::V1::Home::Serializer
     attributes :institution_type, :name, :longitude, :latitude, :address
 
     attribute :is_favorite do |object, params|
-      return unless params[:current_account]
-
-      params[:current_account].user.favorite.institutions.exists?(object.id)
+      params[:current_account].user.favorite.institutions.exists?(object.id) if params[:current_account]
     end
   end
 end

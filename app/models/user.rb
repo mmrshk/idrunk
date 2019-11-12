@@ -24,4 +24,5 @@ class User < ApplicationRecord
   has_one :institution, dependent: :destroy
   has_one :subscription, dependent: :destroy
   has_one :favorite, dependent: :destroy
+  has_many :featured_list_items, through: :favorite, dependent: :destroy
 end

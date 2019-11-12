@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         namespace :account do
           resource :profile, only: :show
         end
+
+        resources :favorites, only: %i[index]
       end
 
       namespace :home do

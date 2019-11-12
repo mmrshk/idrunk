@@ -8,7 +8,8 @@ module Macro
           serializer: serializer,
           include: ctx[:inclusion_options],
           links: ctx[:links],
-          meta: meta ? ctx[meta] : nil
+          meta: meta ? ctx[meta] : nil,
+          params: { current_account: ctx[:current_account] }
         }.compact
 
       [Trailblazer::Activity::Right, [ctx, flow_options]]

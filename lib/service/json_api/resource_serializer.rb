@@ -14,16 +14,15 @@ module Service
         @serializer = renderer.delete(:serializer)
         @options = renderer
         @object = result[:model]
-        @current_account = result[:current_account]
       end
 
       def call
-        serializer.new(object, params: { current_account: current_account, options: options })
+        serializer.new(object, options)
       end
 
       private
 
-      attr_reader :serializer, :options, :object, :current_account
+      attr_reader :serializer, :options, :object
     end
   end
 end
