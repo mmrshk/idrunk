@@ -7,7 +7,7 @@ module Api::V1::Lib::Serializer
 
     belongs_to :user, serializer: Api::V1::Lib::Serializer::UserSerializer
 
-    meta do |object, params|
+    meta do |_object, params|
       params[:options][:meta]
     end
   end
