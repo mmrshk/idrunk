@@ -8,7 +8,7 @@ module Api::V1::Lib::Serializer
     belongs_to :user, serializer: Api::V1::Lib::Serializer::UserSerializer
 
     meta do |_object, params|
-      params[:options][:meta]
+      params[:options][:meta] if params[:options]
     end
   end
 end
