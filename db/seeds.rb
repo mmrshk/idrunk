@@ -26,7 +26,7 @@ Institution.institution_types.each do |institution_type, _|
 
   cost = 20.0
   3.times do
-    item = Item.create(category_id: category.id, cost: cost, has_discount: true)
+    item = Item.create(category_id: category.id, cost: cost, has_discount: true, name: FFaker::Lorem.word)
     ItemDate.create(user_id: user.id, available: false, item_id: item.id)
     cost += 10.0
   end
