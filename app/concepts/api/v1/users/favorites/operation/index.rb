@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Api::V1::Favorites::Operation
+module Api::V1::Users::Favorites::Operation
   class Index < ApplicationOperation
     step :get_featured_list_items
     step Macro::Assign(to: :inclusion_options, value: %i[institution])
