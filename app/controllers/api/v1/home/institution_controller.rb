@@ -9,9 +9,5 @@ module Api::V1::Home
     def show
       endpoint Api::V1::Home::Operation::Show
     end
-
-    def order_item
-      endpoint Api::V1::Home::Operation::OrderItem
-    end
   end
 end

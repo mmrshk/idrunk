@@ -26,6 +26,10 @@ Rails.application.routes.draw do
       namespace :home do
         resources :institution, only: %i[index show]
       end
+
+      namespace :order do
+        resources :order, only: %i[index create show]
+      end
     end
   end
 end

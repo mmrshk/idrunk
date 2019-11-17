@@ -12,7 +12,7 @@ module Service
       end
 
       def initialize(result, errors_source = ERRORS_SOURCE)
-        @errors = result[errors_source].errors.messages
+        @errors = result[errors_source]&.errors&.messages || result[:errors]
       end
 
       def jsonapi_errors_hash
