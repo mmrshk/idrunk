@@ -24,8 +24,8 @@
 class Institution < ApplicationRecord
   acts_as_mappable lat_column_name: :latitude, lng_column_name: :longitude, default_units: :kms
 
-  belongs_to :account, dependent: :destroy
-  has_one :user, through: :account, dependent: :destroy
+  belongs_to :account
+  has_one :user, through: :account
 
   has_many :categories, dependent: :destroy
   has_many :reviews, dependent: :destroy

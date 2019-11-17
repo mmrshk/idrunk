@@ -40,3 +40,5 @@ en:
       not_found: current email token not found
     order:
       current_date_not_availiable: You already took one free drink for today. Visit us tomorrow!
+    users:
+      favorite_is_already_in_list: You already have such institution in your favorite list.

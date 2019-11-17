@@ -18,6 +18,6 @@
 #
 
 class Review < ApplicationRecord
-  belongs_to :institution, dependent: :destroy
-  belongs_to :user, dependent: :destroy
+  belongs_to :institution
+  belongs_to :user
 end

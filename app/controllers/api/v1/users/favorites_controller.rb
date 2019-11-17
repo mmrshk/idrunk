@@ -5,5 +5,13 @@ module Api::V1::Users
     def index
       endpoint Api::V1::Users::Favorites::Operation::Index
     end
+
+    def create
+      endpoint Api::V1::Users::Favorites::Operation::Create
+    end
+
+    def destroy
+      endpoint Api::V1::Users::Favorites::Operation::Delete
+    end
   end
 end

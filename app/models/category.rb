@@ -18,6 +18,6 @@
 #
 
 class Category < ApplicationRecord
-  belongs_to :institution, dependent: :destroy
+  belongs_to :institution
   has_many :items, dependent: :destroy
 end

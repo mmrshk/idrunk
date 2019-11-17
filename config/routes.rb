@@ -20,7 +20,7 @@ Rails.application.routes.draw do
           resource :profile, only: :show
         end
 
-        resources :favorites, only: %i[index]
+        resources :favorites, only: %i[index create destroy]
       end
 
       namespace :home do

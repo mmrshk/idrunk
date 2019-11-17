@@ -19,6 +19,6 @@
 
 class Item < ApplicationRecord
   has_one :item_date, dependent: :destroy
-  belongs_to :category, dependent: :destroy
-  has_one :institution, through: :category, dependent: :destroy
+  belongs_to :category
+  has_one :institution, through: :category
 end

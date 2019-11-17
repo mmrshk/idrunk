@@ -18,6 +18,7 @@
 # frozen_string_literal: true
 
 class FeaturedListItem < ApplicationRecord
-  belongs_to :favorite, dependent: :destroy
-  belongs_to :institution, dependent: :destroy
+  belongs_to :favorite
+  has_one :user, through: :favorite
+  belongs_to :institution
 end

@@ -3,10 +3,10 @@
 module Api::V1::Order::Operation
   class OrderItem < ApplicationOperation
     step :set_item
-    pass :set_user
     fail Macro::Semantic(failure: :not_found), fail_fast: true
+    pass :set_user
     pass :set_date
-    step :current_day_availiable
+    step :current_day_availiable?
     fail Macro::Semantic(failure: :bad_request)
     fail Macro::Assign(to: :errors, value: { item: [I18n.t('errors.order.current_date_not_availiable')] })
     step :set_item_date
@@ -25,8 +25,8 @@ module Api::V1::Order::Operation
       ctx[:time_zone] = Time.zone
     end
 
-    def current_day_availiable(_ctx, user:, **)
-      user&.item_dates&.where(start_at: Time.zone.today)&.empty?
+    def current_day_availiable?(_ctx, user:, **)
+      user.item_dates.where(start_at: Time.zone.today).empty?
     end
 
     def set_item_date(ctx, user:, item:, **)
