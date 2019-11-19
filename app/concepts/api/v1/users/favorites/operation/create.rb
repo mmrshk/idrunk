@@ -15,7 +15,7 @@ module Api::V1::Users::Favorites::Operation
     end
 
     def set_institution(ctx, params:, **)
-      ctx[:institution] = Institution.find_by(id: params[:institiution_id])
+      ctx[:institution] = Institution.find_by(id: params[:institution_id])
     end
 
     def create_featured_list_item(_ctx, favorite:, institution:, **)

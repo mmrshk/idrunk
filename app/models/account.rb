@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: accounts
@@ -19,12 +20,13 @@
 #  index_accounts_on_phone_number  (phone_number) UNIQUE
 #
 
-# frozen_string_literal: true
-
 class Account < ApplicationRecord
   has_secure_password
+
   has_one :user, dependent: :destroy
-  has_many :institutions, dependent: :destroy
+  has_many :item_dates, through: :user, dependent: :destroy
+  has_many :items, through: :item_dates, dependent: :destroy
+  has_many :institutions, through: :items, dependent: :destroy
 
   enum account_type: { customer: 0, owner: 1 }
 end

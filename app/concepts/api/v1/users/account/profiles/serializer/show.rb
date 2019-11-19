@@ -2,8 +2,19 @@
 
 module Api::V1::Users::Account::Profiles::Serializer
   class Show < ApplicationSerializer
-    set_type 'user-profile'
+    set_type 'profile'
     attributes :name
-    belongs_to :account, serializer: Api::V1::Lib::Serializer::AccountSerializer
+
+    attribute :have_saved do |object, params|
+      params[:current_account].items.sum(:cost)
+    end
+
+    attribute :institutions_user_where_was do |object, params|
+      params[:current_account].institutions.uniq
+    end
+
+    attribute :items do |object, params|
+      params[:current_account].items.uniq
+    end
   end
 end
