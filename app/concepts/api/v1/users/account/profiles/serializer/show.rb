@@ -5,15 +5,15 @@ module Api::V1::Users::Account::Profiles::Serializer
     set_type 'profile'
     attributes :name
 
-    attribute :have_saved do |object, params|
+    attribute :have_saved do |_object, params|
       params[:current_account].items.sum(:cost)
     end
 
-    attribute :institutions_user_where_was do |object, params|
+    attribute :institutions_user_where_was do |_object, params|
       params[:current_account].institutions.uniq
     end
 
-    attribute :items do |object, params|
+    attribute :items do |_object, params|
       params[:current_account].items.uniq
     end
   end
