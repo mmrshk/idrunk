@@ -9,6 +9,6 @@ module Constants
     HMAC_SECRET = Rails.env.test? ? 'test' : Rails.application.credentials.secret_key_base
     DNIPRO_LATITUDE = 48.466496
     DNIPRO_LONGITUDE = 35.050786
-    DEFAULT_DISTANCE = 5
+    DEFAULT_DISTANCE = 15g
   end
 end
