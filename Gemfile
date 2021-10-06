@@ -8,7 +8,7 @@ ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip)
 gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'puma', '~> 4.2'
 gem 'rails', '~> 6.0'
-gem 'sidekiq', '~> 6.0', '>= 6.0.1'
+gem 'sidekiq', '~> 6.2'
 
 # Trailblazer bundle
 gem 'dry-validation', '0.11.1'
